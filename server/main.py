@@ -103,6 +103,7 @@ async def websocket_endpoint(websocket: WebSocket):
 
         while True:
             message = await websocket.receive()
+            print(message)
             if message["type"] == "websocket.receive":
                 if "bytes" in message:
                     audio_chunk = message["bytes"]
